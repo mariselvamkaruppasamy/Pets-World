@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container d-grid justify-content-center vh-100 align-items-center">
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="/pets/collection1.jpg" class="img-fluid cat-img" alt="Responsive image" data-aos="zoom-in">
+            </div>
+            <div class="col-sm-6">
+                <div class="card-body">
+                    <!-- <form action="" method="post"> -->
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your Full Name" id="name">
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 mt-2">
+                                <div class="form-group">
+                                    <label for="mobile">Mobile No.</label>
+                                    <input type="number" name="mobile" id="mobile" placeholder="+91 9876543210" aria-describedby="phonehelp" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mt-2">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email" placeholder="Enter your valid mail id" aria-describedby="emailhelp" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 mt-2">
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" id="password" placeholder="password" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mt-2">
+                                <div class="form-group">
+                                    <label for="confirm_password">Confirm Password</label>
+                                    <input type="password" name="confirm_password" id="confirm_password" placeholder="confirm password" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-check mt-2">
+                                <input type="checkbox" class="form-check-input" id="termsAgreement">
+                                <label for="termsAgreement" class="form-check-label">I agree to terms and conditions</label>
+                            </div>
+                        </div>
+                        <div class="form-group text-center mt-2">
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                            <button type="submit" class="btn btn-success" onclick="valid()">Submit</button>
+                        </div>
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        function valid() 
+        {
+            const uname=document.getElementById('name').value;
+            const mnumber=document.getElementById('mobile').value;
+            const mail=document.getElementById('email').value;
+            const pword=document.getElementById('password').value;
+            const cword=document.getElementById('confirm_password').value;
+
+            if (uname != "" && mnumber != "" && mail != "" && pword != "" && cword != "" && pword == cword && emailValidation(mail)) {
+                alert("Successful");
+                window.location.href="./without-animation.html"
+            } else {    
+                alert("Failed");
+            }
+            function emailValidation(em) {
+                const e = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return e.test(em);
+            }
+        }
+    </script>
+</body>
+</html>
